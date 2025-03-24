@@ -51,6 +51,4 @@ yarn-error.log
 
 # Expo
 .expo/*
-.eslintrc.js
-.prettierrc
 rollup.config.js

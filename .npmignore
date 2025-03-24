@@ -14,9 +14,5 @@ __tests__
 /example/
 node_modules
 .git
-.eslintrc.js
-.prettierrc
 .gitignore
 rollup.config.js
-src/
-tsconfig.json
