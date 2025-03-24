@@ -1,0 +1,1 @@
+{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../../../src/components/molecules/PairSelection/index.tsx"],"names":[],"mappings":"AAEA,OAAO,EAML,SAAS,EACV,MAAM,cAAc,CAAC;AAgBtB,UAAU,KAAK;IACb,KAAK,CAAC,EAAE,SAAS,GAAG,SAAS,EAAE,CAAC;CACjC;AAED,iBAAS,aAAa,CAAC,EAAE,KAAK,EAAE,EAAE,KAAK,2CAiEtC;AAED,eAAe,aAAa,CAAC"}

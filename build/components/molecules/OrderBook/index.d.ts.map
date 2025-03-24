@@ -1,0 +1,1 @@
+{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../../../src/components/molecules/OrderBook/index.tsx"],"names":[],"mappings":"AAEA,OAAO,EAAwB,SAAS,EAAE,MAAM,cAAc,CAAC;AAY/D,UAAU,UAAU;IAClB,WAAW,CAAC,EAAE,SAAS,GAAG,SAAS,EAAE,CAAC;CACvC;8EAamC,UAAU;AA2H9C,wBAA+B"}
