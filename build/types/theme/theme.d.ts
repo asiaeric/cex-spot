@@ -4,9 +4,9 @@ import type { Borders } from "./borders";
 import type { Variant } from "./config";
 import type { Fonts } from "./fonts";
 import type { Gutters } from "./gutters";
-import componentGenerators from "@/theme/components";
-import layout from "@/theme/layout";
-import type { Colors } from "@/types/theme/colors";
+import componentGenerators from "../../theme/components";
+import layout from "../../theme/layout";
+import type { Colors } from "../../types/theme/colors";
 export type Theme = {
     colors: Colors;
     variant: Variant;

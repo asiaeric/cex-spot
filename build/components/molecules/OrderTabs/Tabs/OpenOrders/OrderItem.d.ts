@@ -1,4 +1,4 @@
-import { Order } from "@/types";
+import { Order } from "../../../../../types";
 declare function OrderItem({ item, onCancel, }: {
     item: Order;
     onCancel: (id: number) => void;

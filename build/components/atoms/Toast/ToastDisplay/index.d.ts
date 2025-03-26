@@ -1,4 +1,4 @@
-import { Order } from "@/types";
+import { Order } from "../../../../types";
 interface ToastProps {
     message: Order;
     type: "success" | "info" | "danger" | "reject";

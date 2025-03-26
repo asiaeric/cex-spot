@@ -1,4 +1,4 @@
-import { PlaceOrderDTO } from "@/types";
+import { PlaceOrderDTO } from "../../../../../types";
 declare function OrderTypeRow({ isSelected, item, onPress, }: {
     isSelected: boolean;
     item: PlaceOrderDTO;

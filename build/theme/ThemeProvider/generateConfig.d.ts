@@ -1,4 +1,4 @@
-import type { Variant } from "@/types/theme/config";
+import type { Variant } from "../../types/theme/config";
 declare const _default: (variant: Variant) => {
     readonly colors: {
         red500: "#FC466B";

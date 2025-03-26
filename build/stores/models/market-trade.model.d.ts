@@ -1,5 +1,5 @@
 import { Action, Computed, Thunk } from "easy-peasy";
-import { TradingMarket } from "@/types/trade";
+import { TradingMarket } from "../../types/trade";
 export interface MarketTradeState {
     marketTrades: TradingMarket[];
     loading: boolean;

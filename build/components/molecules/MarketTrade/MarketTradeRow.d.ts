@@ -1,4 +1,4 @@
-import { TradingMarket } from "@/types";
+import { TradingMarket } from "../../../types";
 interface Props {
     item: TradingMarket;
 }

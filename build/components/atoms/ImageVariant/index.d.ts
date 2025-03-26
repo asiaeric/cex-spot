@@ -1,5 +1,5 @@
 import { ImageProps, ImageSourcePropType } from "react-native";
-import type { Variant } from "@/types/theme/config";
+import type { Variant } from "../../../types/theme/config";
 type VariantSource = `source${Capitalize<Exclude<Variant, "default">>}`;
 type Props = ImageProps & {
     [variant in VariantSource]?: ImageSourcePropType;

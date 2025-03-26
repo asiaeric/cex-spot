@@ -1,5 +1,5 @@
 import { Action, Thunk } from "easy-peasy";
-import { Fee } from "@/types";
+import { Fee } from "../../types";
 export interface FeeState {
     fee: Fee | undefined;
 }

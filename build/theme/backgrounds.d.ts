@@ -1,4 +1,4 @@
-import type { UnionConfiguration } from "@/types/theme/config";
+import type { UnionConfiguration } from "../types/theme/config";
 /**
  * Generates background styles from configuration
  * @param configuration

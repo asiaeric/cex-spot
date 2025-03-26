@@ -1,5 +1,5 @@
-import type { BorderColors, BorderWidths, BorderRadius } from "@/types/theme/borders";
-import type { UnionConfiguration } from "@/types/theme/config";
+import type { BorderColors, BorderWidths, BorderRadius } from "../types/theme/borders";
+import type { UnionConfiguration } from "../types/theme/config";
 /**
  * Generates border color styles from configuration
  * @param configuration

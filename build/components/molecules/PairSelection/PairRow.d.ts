@@ -1,4 +1,4 @@
-import { TradingPair } from "@/types";
+import { TradingPair } from "../../../types";
 declare function SymbolRow({ isSelected, item, onPress, }: {
     isSelected: boolean;
     item: TradingPair;

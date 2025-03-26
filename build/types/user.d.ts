@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { SignInSchema, SignUpSchema, UserProfileSchema, UserSchema } from "@/schemas";
+import { SignInSchema, SignUpSchema, UserProfileSchema, UserSchema } from "../schemas";
 type User = z.infer<typeof UserSchema>;
 type SignInDTO = z.infer<typeof SignInSchema>;
 type SignUpDTO = z.infer<typeof SignUpSchema>;

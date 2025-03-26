@@ -1,7 +1,7 @@
 import { Action, Thunk } from "easy-peasy";
 import { Model } from ".";
-import { ApiResponse, FilterDate, Order } from "@/types";
-import { WebSocketMessage } from "@/types/socket";
+import { ApiResponse, FilterDate, Order } from "../../types";
+import { WebSocketMessage } from "../../types/socket";
 export interface OrderHistoryState {
     filters: FilterDate;
     extraSize: number;

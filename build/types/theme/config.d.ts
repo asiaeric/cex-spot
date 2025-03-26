@@ -1,7 +1,7 @@
 import type { Theme as NavigationTheme } from "@react-navigation/native";
 import type { AllPartial } from "./common";
-import generateConfig from "@/theme/ThemeProvider/generateConfig";
-import { config } from "@/theme/_config";
+import generateConfig from "../../theme/ThemeProvider/generateConfig";
+import { config } from "../../theme/_config";
 export type Variant = keyof typeof config.variants | "default";
 export type ThemeState = {
     variant: Variant;

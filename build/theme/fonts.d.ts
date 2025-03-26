@@ -1,5 +1,5 @@
-import type { UnionConfiguration } from "@/types/theme/config";
-import type { FontColors, FontSizes } from "@/types/theme/fonts";
+import type { UnionConfiguration } from "../types/theme/config";
+import type { FontColors, FontSizes } from "../types/theme/fonts";
 export declare const generateFontColors: (configuration: UnionConfiguration) => FontColors;
 export declare const generateFontSizes: () => FontSizes;
 export declare const staticFontStyles: {

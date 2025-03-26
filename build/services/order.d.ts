@@ -1,4 +1,4 @@
-import { ApiResponse, CreateOrderQuery, Order, OrderBookData, OrderBookQuery, UserOrderTypeQuery } from "@/types";
+import { ApiResponse, CreateOrderQuery, Order, OrderBookData, OrderBookQuery, UserOrderTypeQuery } from "../types";
 export declare const cancelOrderById: (id: number) => Promise<any>;
 export declare const createNewOrder: (params: CreateOrderQuery) => Promise<Order>;
 export declare const fetchOrderBooks: (params: OrderBookQuery) => Promise<OrderBookData>;

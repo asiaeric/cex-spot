@@ -1,4 +1,4 @@
-import { Asset } from "@/types";
+import { Asset } from "../../../../../types";
 declare function AssetItem({ item }: {
     item: Asset;
 }): import("react/jsx-runtime").JSX.Element;

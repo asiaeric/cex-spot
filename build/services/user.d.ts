@@ -1,4 +1,4 @@
-import { SignInDTO } from "@/types";
+import { SignInDTO } from "../types";
 export declare const signIn: (params: SignInDTO) => Promise<{
     token: string;
     tplPartnerId: string;

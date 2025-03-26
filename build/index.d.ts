@@ -1,2 +1,2 @@
-export { default as CexSpotView } from "@/CexSpotView";
+export { default as CexSpotView } from "./CexSpotView";
 //# sourceMappingURL=index.d.ts.map

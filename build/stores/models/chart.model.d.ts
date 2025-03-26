@@ -1,5 +1,5 @@
 import { Action, Thunk } from "easy-peasy";
-import { CandlestickData, Chart, ChartParams } from "@/types";
+import { CandlestickData, Chart, ChartParams } from "../../types";
 export interface ChartState {
     chartData: CandlestickData[];
     chartSignal: Chart | undefined;

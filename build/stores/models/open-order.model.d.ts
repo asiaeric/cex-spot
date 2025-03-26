@@ -1,7 +1,7 @@
 import { Action, Computed, Thunk } from "easy-peasy";
 import { Model } from ".";
-import { Order, OrderParams, PlaceOrderDTO, UpdateOrderFilledStatusPayload } from "@/types";
-import { WebSocketMessage } from "@/types/socket";
+import { Order, OrderParams, PlaceOrderDTO, UpdateOrderFilledStatusPayload } from "../../types";
+import { WebSocketMessage } from "../../types/socket";
 export interface OpenOrderState {
     openOrders: Order[];
     placeOrderTypes: PlaceOrderDTO[];

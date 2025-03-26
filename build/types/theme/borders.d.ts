@@ -1,7 +1,7 @@
 import type { ArrayValue, RemoveBeforeSeparator, ToNumber } from "./common";
 import type { UnionConfiguration } from "./config";
-import { config } from "@/theme/_config";
-import { staticBorderStyles } from "@/theme/borders";
+import { config } from "../../theme/_config";
+import { staticBorderStyles } from "../../theme/borders";
 type BorderColorKeys = keyof UnionConfiguration["borders"]["colors"];
 export type BorderColors = {
     [key in Extract<BorderColorKeys, string>]: RemoveBeforeSeparator<key> extends keyof UnionConfiguration["borders"]["colors"] ? {

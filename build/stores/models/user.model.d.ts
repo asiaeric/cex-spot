@@ -1,5 +1,5 @@
 import { Action, Thunk } from "easy-peasy";
-import { InHouseToken, PartnerToken, SignInDTO, SignUpDTO, User, UserProfile } from "@/types";
+import { InHouseToken, PartnerToken, SignInDTO, SignUpDTO, User, UserProfile } from "../../types";
 type UserWithToken = {
     me: User;
     inHouseToken: InHouseToken;

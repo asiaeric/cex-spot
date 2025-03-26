@@ -1,5 +1,5 @@
 import { ViewStyle } from "react-native";
-import { FilterDate } from "@/types";
+import { FilterDate } from "../../../types";
 interface AggregationSelectionType {
     customStyle?: ViewStyle | ViewStyle[];
     onFilterChange: ({ startDate, endDate }: FilterDate) => void;

@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from "react";
 import type { MMKV } from "react-native-mmkv";
-import type { Variant } from "@/types/theme/config";
-import type { Theme } from "@/types/theme/theme";
+import type { Variant } from "../../types/theme/config";
+import type { Theme } from "../../types/theme/theme";
 type Context = Theme & {
     changeTheme: (variant: Variant) => void;
 };

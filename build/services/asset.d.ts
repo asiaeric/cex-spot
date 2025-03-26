@@ -1,4 +1,4 @@
-import { UserAssetsQuery } from "@/types";
+import { UserAssetsQuery } from "../types";
 declare const fetchUserAssets: () => Promise<{
     name: string;
     code: string;

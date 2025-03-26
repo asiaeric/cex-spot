@@ -1,6 +1,6 @@
 import { Action, Thunk } from "easy-peasy";
 import { Model } from ".";
-import { Asset, UserAssetsQuery } from "@/types";
+import { Asset, UserAssetsQuery } from "../../types";
 export interface AssetsState {
     assets: Asset[];
     error: string;

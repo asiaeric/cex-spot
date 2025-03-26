@@ -2,7 +2,7 @@
   "extends": "expo-module-scripts/tsconfig.base",
   "compilerOptions": {
     "jsx": "react-jsx",
-    "outDir": "./build",
+    "outDir": "build",
     "declaration": true,
     "declarationMap": true,
     "module": "ESNext",
@@ -16,7 +16,6 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "emitDeclarationOnly": true
   },
   "include": ["./src"],
   "exclude": ["**/__mocks__/*", "**/__tests__/*", "**/__rsc_tests__/*"]

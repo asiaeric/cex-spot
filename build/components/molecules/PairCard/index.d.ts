@@ -1,5 +1,5 @@
 import React from "react";
-import { TradingPair } from "@/types";
+import { TradingPair } from "../../../types";
 type Props = {
     pair: TradingPair;
 };

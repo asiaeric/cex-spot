@@ -1,5 +1,5 @@
 import { Action, Thunk } from "easy-peasy";
-import { Statistic } from "@/types";
+import { Statistic } from "../../types";
 export interface StatisticState {
     statistics: Map<string, Statistic>;
     error: string;

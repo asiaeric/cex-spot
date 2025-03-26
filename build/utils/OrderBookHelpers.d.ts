@@ -1,4 +1,4 @@
-import { Order, OrderBookData, OrderBookPair, OrderSide } from "@/types";
+import { Order, OrderBookData, OrderBookPair, OrderSide } from "../types";
 export declare const roundToNearest: (value: number, ticketSize: number, type: OrderSide) => number;
 export declare const groupByTicketSize: (orderBookData: OrderBookData, ticketSize: number, depth: number) => {
     asks: OrderBookPair[];

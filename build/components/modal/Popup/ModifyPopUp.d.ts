@@ -1,4 +1,4 @@
-import { Order } from "@/types";
+import { Order } from "../../../types";
 export type ModifyPopUpRefProps = {
     open: () => void;
     close: () => void;

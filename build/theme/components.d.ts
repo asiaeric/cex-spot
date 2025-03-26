@@ -1,4 +1,4 @@
-import type { ComponentTheme } from "@/types/theme/theme";
+import type { ComponentTheme } from "../types/theme/theme";
 declare const _default: ({ layout, backgrounds, fonts, gutters, borders, colors, }: ComponentTheme) => {
     readonly buttonSquare: {
         readonly width: number;

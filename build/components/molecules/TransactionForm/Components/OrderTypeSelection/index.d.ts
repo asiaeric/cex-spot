@@ -1,4 +1,4 @@
-import { PlaceOrderDTO } from "@/types";
+import { PlaceOrderDTO } from "../../../../../types";
 declare function OrderTypeSelection({ value, onSelect, }: {
     value: PlaceOrderDTO;
     onSelect: (e: PlaceOrderDTO) => void;

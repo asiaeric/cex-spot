@@ -1,6 +1,6 @@
 import { Action, Thunk } from "easy-peasy";
 import { Model } from ".";
-import { FilterDate, ResponseTrading, Trading } from "@/types";
+import { FilterDate, ResponseTrading, Trading } from "../../types";
 export interface TradingState {
     filters: FilterDate;
     trading: Trading[];

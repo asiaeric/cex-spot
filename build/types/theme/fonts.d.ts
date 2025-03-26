@@ -1,7 +1,7 @@
 import type { ArrayValue, RemoveBeforeSeparator, ToNumber } from "./common";
 import type { UnionConfiguration } from "./config";
-import { config } from "@/theme/_config";
-import { staticFontStyles } from "@/theme/fonts";
+import { config } from "../../theme/_config";
+import { staticFontStyles } from "../../theme/fonts";
 type FontSizesKeys = `size_${ArrayValue<typeof config.fonts.sizes>}`;
 export type FontSizes = {
     [key in FontSizesKeys]: {

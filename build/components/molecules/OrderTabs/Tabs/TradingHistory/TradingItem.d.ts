@@ -1,4 +1,4 @@
-import { Trading } from "@/types";
+import { Trading } from "../../../../../types";
 declare function TradingItem({ item }: {
     item: Trading;
 }): import("react/jsx-runtime").JSX.Element;

@@ -1,4 +1,4 @@
-import { TradingMarket } from "@/types/trade";
+import { TradingMarket } from "../types/trade";
 declare const fetchMarketTrading: ({ symbol, size, }: {
     symbol: string;
     size: number;

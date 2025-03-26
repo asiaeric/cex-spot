@@ -1,6 +1,6 @@
 import { Action, Computed, Thunk } from "easy-peasy";
 import { Model } from ".";
-import { OrderBookData, OrderBookQuery, OrderBookPair } from "@/types";
+import { OrderBookData, OrderBookQuery, OrderBookPair } from "../../types";
 export interface OrderBookState {
     rawOrderBookData: OrderBookData;
     orderBookLoading: boolean;

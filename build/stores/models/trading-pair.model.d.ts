@@ -1,5 +1,5 @@
 import { Action, Thunk } from "easy-peasy";
-import { TradingPair } from "@/types";
+import { TradingPair } from "../../types";
 export interface TradingPairState {
     tradingPairs: Map<string, TradingPair>;
     currentPair: TradingPair | undefined;
