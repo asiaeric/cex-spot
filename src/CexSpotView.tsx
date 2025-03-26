@@ -20,9 +20,9 @@ ignoreErrorVirtualList();
 
 export default function CexSpotView() {
   return (
-    <SafeAreaProvider>
-      <GestureHandlerRootView style={{ flex: 1 }}>
-        <KeyboardProvider>
+    // <SafeAreaProvider>
+      // <GestureHandlerRootView style={{ flex: 1 }}>
+        // <KeyboardProvider>
           <StoreProvider store={store}>
             <ThemeProvider storage={storage}>
               <BottomSheetModalProvider>
@@ -31,8 +31,8 @@ export default function CexSpotView() {
               </BottomSheetModalProvider>
             </ThemeProvider>
           </StoreProvider>
-        </KeyboardProvider>
-      </GestureHandlerRootView>
-    </SafeAreaProvider>
+        // </KeyboardProvider>
+      // </GestureHandlerRootView>
+    // </SafeAreaProvider>
   );
 }

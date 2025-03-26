@@ -38,7 +38,7 @@ function ApplicationNavigator() {
   const { variant, navigationTheme } = useTheme();
 
   return (
-    <NavigationContainer theme={navigationTheme} ref={navigationRef}>
+    // <NavigationContainer theme={navigationTheme} ref={navigationRef}>
       <Stack.Navigator
         key={variant}
         screenOptions={{ headerShown: false, gestureEnabled: false }}>
@@ -50,7 +50,7 @@ function ApplicationNavigator() {
         <Stack.Screen name={RouteName.Setting} component={Setting} />
         <Stack.Screen name={RouteName.Transaction} component={Transaction} />
       </Stack.Navigator>
-    </NavigationContainer>
+    // </NavigationContainer>
   );
 }
 
