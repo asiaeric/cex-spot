@@ -1,1 +1,0 @@
-{"version":3,"file":"useChartSubscription.d.ts","sourceRoot":"","sources":["../../src/hooks/useChartSubscription.ts"],"names":[],"mappings":"AAGA,OAAO,EAAE,eAAe,EAAE,MAAM,SAAS,CAAC;AAI1C,eAAO,MAAM,oBAAoB,GAAI,0CAKlC;IACD,WAAW,EAAE,OAAO,CAAC;IACrB,IAAI,EAAE,MAAM,CAAC;IACb,QAAQ,EAAE,MAAM,CAAC;IACjB,MAAM,EAAE,CAAC,IAAI,EAAE,eAAe,KAAK,IAAI,CAAC;CACzC,SAgCA,CAAC"}

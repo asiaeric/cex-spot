@@ -1,1 +1,0 @@
-{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../../../src/components/molecules/LanguageSelection/index.tsx"],"names":[],"mappings":"AAEA,OAAO,EAML,SAAS,EACV,MAAM,cAAc,CAAC;AAgBtB,UAAU,wBAAwB;IAChC,WAAW,CAAC,EAAE,SAAS,GAAG,SAAS,EAAE,CAAC;CACvC;AAED,iBAAS,iBAAiB,CAAC,EAAE,WAAW,EAAE,EAAE,wBAAwB,2CAgEnE;AAED,eAAe,iBAAiB,CAAC"}

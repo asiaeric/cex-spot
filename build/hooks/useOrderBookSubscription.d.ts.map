@@ -1,1 +1,0 @@
-{"version":3,"file":"useOrderBookSubscription.d.ts","sourceRoot":"","sources":["../../src/hooks/useOrderBookSubscription.ts"],"names":[],"mappings":"AAQA,eAAO,MAAM,wBAAwB,GAAI,oBAGtC;IACD,MAAM,EAAE,MAAM,GAAG,SAAS,CAAC;IAC3B,KAAK,EAAE,MAAM,CAAC;CACf,SAqBA,CAAC"}

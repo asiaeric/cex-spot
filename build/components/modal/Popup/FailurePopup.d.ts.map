@@ -1,1 +1,0 @@
-{"version":3,"file":"FailurePopup.d.ts","sourceRoot":"","sources":["../../../../src/components/modal/Popup/FailurePopup.tsx"],"names":[],"mappings":"AAOA,KAAK,KAAK,GAAG;IACX,OAAO,EAAE,MAAM,IAAI,CAAC;IACpB,KAAK,CAAC,EAAE,MAAM,CAAC;CAChB,CAAC;AAEF,iBAAS,YAAY,CAAC,EAAE,OAAO,EAAE,KAAK,EAAE,EAAE,KAAK,2CAyB9C;AAED,eAAe,YAAY,CAAC"}

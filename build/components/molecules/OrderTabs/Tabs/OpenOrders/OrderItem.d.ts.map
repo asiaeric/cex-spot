@@ -1,1 +1,0 @@
-{"version":3,"file":"OrderItem.d.ts","sourceRoot":"","sources":["../../../../../../src/components/molecules/OrderTabs/Tabs/OpenOrders/OrderItem.tsx"],"names":[],"mappings":"AAMA,OAAO,EAAE,KAAK,EAA0B,MAAM,SAAS,CAAC;AAGxD,iBAAS,SAAS,CAAC,EACjB,IAAI,EACJ,QAAQ,GACT,EACD;IACE,IAAI,EAAE,KAAK,CAAC;IACZ,QAAQ,EAAE,CAAC,EAAE,EAAE,MAAM,KAAK,IAAI,CAAC;CAEhC,2CAgHA;AAED,eAAe,SAAS,CAAC"}

@@ -1,1 +1,0 @@
-{"version":3,"file":"ConfirmPopup.d.ts","sourceRoot":"","sources":["../../src/components/ConfirmPopup.tsx"],"names":[],"mappings":"AACA,OAAO,KAKN,MAAM,OAAO,CAAC;AAOf,KAAK,KAAK,GAAG;IACX,KAAK,CAAC,EAAE,MAAM,CAAC;CAChB,CAAC;AAEF,MAAM,MAAM,oBAAoB,GAAG;IACjC,IAAI,EAAE,CAAC,SAAS,EAAE,MAAM,IAAI,KAAK,IAAI,CAAC;CACvC,CAAC;AAEF,QAAA,MAAM,YAAY,oFA6EjB,CAAC;AAEF,eAAe,YAAY,CAAC"}

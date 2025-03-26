@@ -1,1 +1,0 @@
-{"version":3,"file":"index.d.ts","sourceRoot":"","sources":["../../../../src/components/molecules/TransactionForm/index.tsx"],"names":[],"mappings":"AAEA,OAAO,EAML,SAAS,EACV,MAAM,cAAc,CAAC;AAsBtB,UAAU,gBAAgB;IACxB,WAAW,CAAC,EAAE,SAAS,GAAG,SAAS,EAAE,CAAC;CACvC;AAED,iBAAS,eAAe,CAAC,EAAE,WAAW,EAAE,EAAE,gBAAgB,2CAsiBzD;AAED,eAAe,eAAe,CAAC"}

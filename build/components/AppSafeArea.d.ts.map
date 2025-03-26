@@ -1,1 +1,0 @@
-{"version":3,"file":"AppSafeArea.d.ts","sourceRoot":"","sources":["../../src/components/AppSafeArea.tsx"],"names":[],"mappings":"AACA,OAAO,EAAE,IAAI,EAAgB,MAAM,gCAAgC,CAAC;AAIpE,UAAU,eAAe;IACvB,QAAQ,EAAE,KAAK,CAAC,SAAS,CAAC;IAC1B,UAAU,CAAC,EAAE,IAAI,EAAE,GAAG,SAAS,CAAC;CACjC;AAED,iBAAS,WAAW,CAAC,EAAE,QAAQ,EAAE,UAAU,EAAE,EAAE,eAAe,2CAuB7D;AAED,eAAe,WAAW,CAAC"}
