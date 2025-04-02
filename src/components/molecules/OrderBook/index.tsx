@@ -42,7 +42,7 @@ const OrderBook = ({ customStyle }: IOrderBook) => {
 
   const { openOrders } = useStoreState((store) => store.openOrdersModel);
 
-  useOrderBookSubscription({ code: currentPair!.code });
+  useOrderBookSubscription({ code: currentPair?.code });
 
   const renderAsks = useCallback(
     ({ item }: RAsks) => {

@@ -14,7 +14,6 @@ import CEXWebSocket from "./ws/Websocket";
 import "react-native-reanimated";
 import { setAccessToken } from "./services/instance";
 import { useLoginSubscription } from "./hooks/useLoginSubscription";
-import { enableMapSet } from "immer";
 import { initCexSpotI18n } from "./translations";
 // const NativeView: React.ComponentType<CexSpotViewProps> = requireNativeView("CexSpot");
 
@@ -22,9 +21,8 @@ export const wsClient = CEXWebSocket.getInstance();
 
 // This is to ensure all needed functions is initialized when the module is loaded
 export const initialCexSpot = async () => {
-  await initCexSpotI18n(); // Ensure i18n is initialized
+  initCexSpotI18n(); // Ensure i18n is initialized
   ignoreErrorVirtualList();
-  enableMapSet();
 }
 
 interface CexSpotViewProps {

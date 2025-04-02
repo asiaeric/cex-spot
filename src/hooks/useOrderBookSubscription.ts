@@ -6,7 +6,7 @@ import { OrderBookData } from "@/types";
 import { WebSocketMessage } from "@/types/socket";
 import TopicHelper from "@/ws/topic";
 
-export const useOrderBookSubscription = ({ code }: { code: string }) => {
+export const useOrderBookSubscription = ({ code }: { code: string | undefined }) => {
   const { updateOrderBooks } = useStoreActions((store) => store.orderBookModel);
 
   const transformDepthUpdate = useCallback((data: any): OrderBookData => {
