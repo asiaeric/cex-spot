@@ -14,7 +14,7 @@ export type IncreaseBalanceBSRefProps = {
 
 const IncreaseBalanceBS = forwardRef<IncreaseBalanceBSRefProps>(
   (props, ref) => {
-    const { t } = useTranslation("order");
+    const { t } = useTranslation(["cex-spot/order"]);
     const { layout, gutters, fonts, components } = useTheme();
     const bsRef = useRef<BottomSheetRefProps>(null);
 

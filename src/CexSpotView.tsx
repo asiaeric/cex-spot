@@ -12,27 +12,42 @@ import { ThemeProvider } from "./theme";
 import { ignoreErrorVirtualList } from "./utils/StringHelper";
 import CEXWebSocket from "./ws/Websocket";
 import "react-native-reanimated";
+import { setAccessToken } from "./services/instance";
+import { useLoginSubscription } from "./hooks/useLoginSubscription";
 // const NativeView: React.ComponentType<CexSpotViewProps> = requireNativeView("CexSpot");
 
 export const wsClient = CEXWebSocket.getInstance();
 
 ignoreErrorVirtualList();
 
-export default function CexSpotView() {
+interface CexSpotViewProps {
+  accessToken?: string;
+}
+
+export default function CexSpotView({ accessToken }: CexSpotViewProps) {
+  React.useEffect(() => {
+    setAccessToken(
+      accessToken ||
+        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwYXJ0bmVySWQiOiIxIiwicGFydG5lclByb2ZpbGVJZCI6ImEwZDVmMjViLWQwMmQtNDkzYS1iNGM5LTU4NDEzMTcxYjI0ZiIsImlhdCI6MTc0MzU4MDMwNSwiZXhwIjoxNzQzNTgxMzkwLCJhdWQiOiJjZXgtaW50ZXJuYWwtc2VydmljZSIsImlzcyI6ImNleC1hdXRoLXNlcnZpY2UiLCJzdWIiOiIyOTc0Njc1OTM1Nzk1NjE5ODQifQ.T3HLlBOJmqPdcgfqPbFQq0qJvaWZgt2L5TRixA21NjU",
+    );
+  }, [accessToken]);
+
+  useLoginSubscription({ code: accessToken || "" });
+
   return (
     // <SafeAreaProvider>
-      // <GestureHandlerRootView style={{ flex: 1 }}>
-        // <KeyboardProvider>
-          <StoreProvider store={store}>
-            <ThemeProvider storage={storage}>
-              <BottomSheetModalProvider>
-                <ApplicationNavigator />
-                <GlobalModal />
-              </BottomSheetModalProvider>
-            </ThemeProvider>
-          </StoreProvider>
-        // </KeyboardProvider>
-      // </GestureHandlerRootView>
+    //   <GestureHandlerRootView style={{ flex: 1 }}>
+    //     <KeyboardProvider>
+    <StoreProvider store={store}>
+      <ThemeProvider storage={storage}>
+        <BottomSheetModalProvider>
+          <ApplicationNavigator />
+          <GlobalModal />
+        </BottomSheetModalProvider>
+      </ThemeProvider>
+    </StoreProvider>
+    //     </KeyboardProvider>
+    //   </GestureHandlerRootView>
     // </SafeAreaProvider>
   );
 }

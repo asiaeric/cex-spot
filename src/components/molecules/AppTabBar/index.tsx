@@ -15,7 +15,7 @@ const AppTabBar: React.FC<AppTabBarProps> = ({
   onTabPress,
 }) => {
   const { layout, fonts, borders, components, gutters } = useTheme();
-  const { t } = useTranslation(["common"]);
+  const { t } = useTranslation(["cex-spot/common"]);
 
   return (
     <View style={[layout.row, borders.bottom_1, borders.neutral400]}>

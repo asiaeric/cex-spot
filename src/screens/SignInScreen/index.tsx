@@ -25,10 +25,14 @@ function SignInScreen() {
     formState: { errors },
   } = useForm({
     resolver: zodResolver(SignInSchema),
+    defaultValues: {
+      email: "hanaqa4@gmail.com",
+      password: "123456@Tt",
+    },
   });
   usePreventBackNavigation();
 
-  const { t } = useTranslation(["common", "login"]);
+  const { t } = useTranslation(["cex-spot/common", "cex-spot/login"]);
   const { isSigning = true, loginError } = useStoreState(
     (store) => store.userModel,
   );

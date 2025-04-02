@@ -1,6 +1,7 @@
 import { t } from "i18next";
 
-import { FetchOrderStatus, Order, OrderAction } from "@/types";
+import { FetchOrderStatus, Order, OrderAction, WSOrderData } from "@/types";
+import { formatISO } from "date-fns";
 
 interface AggregatedOrder {
   quantity: number;
@@ -69,3 +70,28 @@ export function adjustValueToSize(value: number, size: number) {
   const result = Math.round(value * factor) / factor;
   return result;
 }
+
+export const parseWSOrderData = (data: WSOrderData): Order => {
+  const [baseCurrency, quoteCurrency] = data.symbolCode.split("_"); // Assuming symbolCode is in "BASE_QUOTE" format
+
+  return {
+    id: Number(data.id),
+    userId: Number(data.userId),
+    symbolCode: data.symbolCode,
+    symbolName: `${baseCurrency}/${quoteCurrency}`, // Example: "BTC/USDT"
+    priceFromUser: Number(data.price),
+    quantity: Number(data.quantity),
+    filled: Number(data.baseFilled),
+    action: data.action,
+    type: data.type,
+    status: data.status,
+    total: Number(data.price) * Number(data.quantity),
+    fee: Number(data.fee),
+    baseCurrency,
+    quoteCurrency,
+    createdAt: formatISO(data.createdAt),
+    updatedAt: formatISO(data.updatedAt),
+    externalId: Number(data.id),
+    matchingPrice: Number(data.matchingPrice),
+  };
+};

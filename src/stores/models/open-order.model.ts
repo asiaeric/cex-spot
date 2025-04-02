@@ -19,7 +19,7 @@ import {
   WSOrderData,
 } from "@/types";
 import { WebSocketMessage } from "@/types/socket";
-import { hasMatchingOrder } from "@/utils/OrderHelpers";
+import { hasMatchingOrder, parseWSOrderData } from "@/utils/OrderHelpers";
 import { showFailureModal } from "@/utils/PopUpHelpers";
 
 export interface OpenOrderState {
@@ -45,7 +45,7 @@ export interface OpenOrderThunks {
   createTransaction: Thunk<this, OrderParams>;
   cancelTransaction: Thunk<this, number>;
   getOpenOrders: Thunk<this, { size: number }>;
-  updateOpenOrders: Thunk<this, WebSocketMessage, any, Model>;
+  updateOpenOrders: Thunk<this, WSOrderData, any, Model>;
 }
 
 export interface OpenOrdersModel
@@ -56,7 +56,6 @@ export interface OpenOrdersModel
 
 export const openOrdersModel: OpenOrdersModel = {
   placeOrderTypes: PLACE_ORDER_TYPES,
-
   openOrders: [],
   openOrderCount: computed((state) => {
     return state.openOrders.length;
@@ -98,59 +97,59 @@ export const openOrdersModel: OpenOrdersModel = {
     actions.setOpenOrders(response);
   }),
   updateOpenOrders: thunk((actions, payload, { getState }) => {
-    // const { data } = payload;
-    // console.log("data", data);
-    // const order = parseWSOrder(data as WSOrderData);
-    // const { openOrders: currentOpenOrders } = getState();
-    // if (order) {
-    //   switch (payload.status) {
-    //     case UserOrderStatus.ACTIVE:
-    //       if (!hasMatchingOrder(order, currentOpenOrders))
-    //         actions.addNewOrder(order);
-    //       notify("success", {
-    //         params: { type: "success", message: order },
-    //       });
-    //       break;
-    //     case OrderStatus.ORDER_FILLED:
-    //       notify("info", {
-    //         params: { type: "info", message: order },
-    //       });
-    //       if (order.filled === order.quantity) {
-    //         actions.removeOrderById(order.externalId || order.id);
-    //       } else {
-    //         const existingOrderIndex = currentOpenOrders.some(
-    //           (o) => o.externalId === (order.externalId || order.id),
-    //         );
-    //         if (existingOrderIndex) {
-    //           actions.updateOrderFilledStatus({
-    //             id: order.externalId || order.id,
-    //             filled: order.filled,
-    //           });
-    //         } else {
-    //           actions.addNewOrder(order);
-    //         }
-    //       }
-    //       break;
-    //     case OrderStatus.ORDER_CANCEL:
-    //       notify("danger", {
-    //         params: { type: "danger", message: order },
-    //       });
-    //       actions.removeOrderById(order.externalId || order.id);
-    //       break;
-    //     case OrderStatus.ORDER_REJECTED:
-    //       notify("reject", {
-    //         params: { type: "reject", message: order },
-    //       });
-    //       actions.removeOrderById(order.externalId || order.id);
-    //       break;
-    //     default:
-    //       break;
-    //   }
-    // }
+    const order = parseWSOrderData(payload as WSOrderData);
+    const { openOrders: currentOpenOrders } = getState();
+    if (order) {
+      switch (payload.status) {
+        case UserOrderStatus.ACTIVE:
+          if (!hasMatchingOrder(order, currentOpenOrders))
+            actions.addNewOrder(order);
+          // notify("success", {
+          //   params: { type: "success", message: order },
+          // });
+          break;
+        case UserOrderStatus.FILLED:
+          // notify("info", {
+          //   params: { type: "info", message: order },
+          // });
+          if (order.filled === order.quantity) {
+            actions.removeOrderById(order.externalId || order.id);
+          } else {
+            const existingOrderIndex = currentOpenOrders.some(
+              (o) => o.externalId === (order.externalId || order.id),
+            );
+            if (existingOrderIndex) {
+              actions.updateOrderFilledStatus({
+                id: order.externalId || order.id,
+                filled: order.filled,
+              });
+            } else {
+              actions.addNewOrder(order);
+            }
+          }
+          break;
+        case UserOrderStatus.PARTIALLY_FILLED:
+          actions.addNewOrder(order);
+          break;
+        case UserOrderStatus.CANCELED:
+          // notify("danger", {
+          //   params: { type: "danger", message: order },
+          // });
+          actions.removeOrderById(order.externalId || order.id);
+          break;
+        case UserOrderStatus.REJECTED:
+          // notify("reject", {
+          //   params: { type: "reject", message: order },
+          // });
+          actions.removeOrderById(order.externalId || order.id);
+          break;
+        default:
+          break;
+      }
+    }
   }),
   createTransaction: thunk(async (actions, payload) => {
     const reponse = await createNewOrder(payload);
-    console.log("reponse", reponse);
   }),
   setOrderActionError: action((state, payload) => {
     state.orderActionError = payload;

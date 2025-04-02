@@ -36,7 +36,6 @@ const TradingScreen = () => {
       </View>
       <StatisticField />
       <ScrollView contentContainerStyle={layout.flexGrow}>
-        {/* <TradingView /> */}
         <ChartWebView />
         <TradingTabs />
       </ScrollView>

@@ -1,18 +1,19 @@
-import dayjs from "dayjs";
 import { Action, Thunk, action, thunk } from "easy-peasy";
 
 import { NUMBER_BARS_QUERY } from "@/constants";
 import { DATE_FORMATS } from "@/constants/dateFormats";
 import { fetchChartHistory } from "@/services/chart";
 import { CandlestickData, Chart, ChartParams } from "@/types";
+import { format, subMilliseconds } from "date-fns";
 
 function subtractMilliseconds(
   dateTimeString: string,
   milliseconds: number,
 ): string {
-  return dayjs(dateTimeString)
-    .subtract(milliseconds, "milliseconds")
-    .format(DATE_FORMATS.DATE_TIME);
+  return format(
+    subMilliseconds(new Date(dateTimeString), milliseconds),
+    DATE_FORMATS.DATE_TIME,
+  );
 }
 
 const milliseconds = (payload: ChartParams) => {
@@ -60,12 +61,12 @@ export interface ChartModel extends ChartState, ChartActions, ChartThunks {}
 export const chartModel: ChartModel = {
   chartData: [],
   chartSignal: undefined,
-  currentTimeQuery: dayjs().format(DATE_FORMATS.DATE_TIME),
+  currentTimeQuery: format(new Date(), DATE_FORMATS.DATE_TIME),
   setChartHistory: action((state, payload) => {
     state.chartData.unshift(...payload);
   }),
   resetCurrentTimeQuery: action((state) => {
-    state.currentTimeQuery = dayjs().format(DATE_FORMATS.DATE_TIME);
+    state.currentTimeQuery = format(new Date(), DATE_FORMATS.DATE_TIME);
     state.chartData = [];
   }),
   sendChartSignal: action((state, payload) => {

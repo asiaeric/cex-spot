@@ -1,5 +1,5 @@
-function orderBookTopic(currentSymbol: string, depth: number): string {
-  return `/topic/order-book/${currentSymbol}_${depth}`;
+function orderBookTopic(code: string): string {
+  return `${code}@depth`;
 }
 
 function tradeMarket(code: string): string {

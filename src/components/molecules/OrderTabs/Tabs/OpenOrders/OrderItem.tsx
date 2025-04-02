@@ -58,7 +58,7 @@ function OrderItem({
             <Text style={fonts.gray400}>{displayDate(item.createdAt)}</Text>
           </Text>
         </View>
-        {/* <View style={[layout.row, layout.itemsCenter, layout.justifyCenter]}>
+        <View style={[layout.row, layout.itemsCenter, layout.justifyCenter]}>
           <View style={[layout.itemsCenter, gutters.marginRight_8]}>
             <Text
               style={[fonts.gray400, gutters.marginBottom_4, fonts.size_12]}>
@@ -75,12 +75,12 @@ function OrderItem({
             onPress={() => onCancel(item.externalId || item.id)}
             text={t("common:cancel")}
           />
-          <CustomButton
+          {/* <CustomButton
             type="square"
             onPress={() => onEdit(item)}
             text="Edit"
-          />
-        </View> */}
+          /> */}
+        </View>
       </View>
       <View
         style={[
@@ -90,13 +90,12 @@ function OrderItem({
           layout.itemsCenter,
         ]}>
         <Text style={[fonts.size_14, fonts.gray200, fonts.bold]}>
-          {/* {t("order:filled")} / */}
-          {t("order:amount")}
+          {t("order:filled")} /{t("order:amount")}
         </Text>
         <View>
           {item.type === OrderType.LIMIT ? (
             <Text style={[fonts.size_16, fonts.gray50, fonts.bold]}>
-              {/* {`${item.filled} / `} */}
+              {`${item.filled} / `}
               <Text style={[fonts.size_16, fonts.gray400, fonts.bold]}>
                 {item.quantity}
               </Text>
@@ -120,7 +119,7 @@ function OrderItem({
         </Text>
         <View>
           <Text style={[fonts.size_16, fonts.gray50, fonts.bold]}>
-            {/* {formatCurrency(item.price)} {item.quoteCurrency} */}
+            {formatCurrency(item.matchingPrice)} {item.quoteCurrency}
           </Text>
         </View>
       </View>

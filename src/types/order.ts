@@ -85,7 +85,7 @@ interface WSOrderData {
   quantity: string;
   quoteFilled: string;
   quoteQuantity: string;
-  status: OrderStatus;
+  status: UserOrderStatus;
   submittedAt: number;
   symbolCode: string;
   type: "LIMIT" | "MARKET";

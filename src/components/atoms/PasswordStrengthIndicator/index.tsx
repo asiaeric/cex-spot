@@ -20,7 +20,7 @@ const PasswordRequirements: React.FC<PasswordRequirementsProps> = ({
   onLayout,
 }) => {
   const { gutters } = useTheme();
-  const { t } = useTranslation(["signup"]);
+  const { t } = useTranslation(["cex-spot/signup"]);
 
   const criteria: PasswordRequirement[] = useMemo(
     () => [

@@ -17,7 +17,7 @@ import { useTheme } from "@/theme";
 import { validateField } from "@/utils/StringHelper";
 
 function SignUpScreen() {
-  const { t } = useTranslation(["common", "signup"]);
+  const { t } = useTranslation(["cex-spot/common", "cex-spot/signup"]);
   const { isSigning, signUpError } = useStoreState((store) => store.userModel);
   const { signUp, resetError } = useStoreActions((store) => store.userModel);
   const { setEnabled } = useKeyboardController();

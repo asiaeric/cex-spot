@@ -1,10 +1,7 @@
 import i18n from "i18next";
-import { initReactI18next } from "react-i18next";
 
 import * as en from "./en";
 import * as vn from "./vn";
-
-import { storage } from "@/stores";
 
 type TupleUnion<U extends string, R extends unknown[] = []> = {
   [S in U]: Exclude<U, S> extends never
@@ -12,7 +9,9 @@ type TupleUnion<U extends string, R extends unknown[] = []> = {
     : TupleUnion<Exclude<U, S>, [...R, S]>;
 }[U];
 
-const ns = Object.keys(en) as TupleUnion<keyof typeof en>;
+const ns = Object.keys(en).map((key) => `cex-spot/${key}`) as TupleUnion<
+  keyof typeof en
+>;
 
 export const defaultNS = ns[0];
 
@@ -26,21 +25,13 @@ export const languageNames: Record<string, string> = {
   vn: "Tiếng Việt",
 };
 
-const initI18n = () => {
-  const savedLanguage = storage.getString("language");
-  void i18n.use(initReactI18next).init({
-    ns,
-    defaultNS,
-    resources: languageResources,
-    lng: savedLanguage || "en",
-    fallbackLng: "en",
-    interpolation: {
-      escapeValue: false, // not needed for react as it escapes by default
-    },
-    compatibilityJSON: "v4",
+const initCexSpotI18n = (hostI18n = i18n) => {
+  // Add your resources to the host i18next instance
+  Object.entries(languageResources).forEach(([lang, namespaces]) => {
+    Object.entries(namespaces).forEach(([ns, resources]) => {
+      hostI18n.addResourceBundle(lang, `cex-spot/${ns}`, resources, true, true);
+    });
   });
 };
 
-initI18n();
-
-export default i18n;
+export { initCexSpotI18n };

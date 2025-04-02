@@ -30,7 +30,7 @@ interface AggregationSelectionType {
 function AggregationSelection({ type, customStyle }: AggregationSelectionType) {
   const { layout, gutters, fonts, components } = useTheme();
   const bsRef = useRef<BottomSheetRefProps>(null);
-  const { t } = useTranslation(["common"]);
+  const { t } = useTranslation(["cex-spot/common"]);
   const { currentAggregation, currentPair } = useStoreState(
     (store) => store.tradingPairModel,
   );

@@ -35,7 +35,7 @@ const InfoWrapper = ({
 };
 
 const SettingScreen = () => {
-  const { t } = useTranslation("setting");
+  const { t } = useTranslation(["cex-spot/setting"]);
   const onChangeLanguage = useCallback((lang: "vn" | "en") => {
     void i18next.changeLanguage(lang);
   }, []);

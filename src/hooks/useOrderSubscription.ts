@@ -15,9 +15,9 @@ export const useOrderSubscription = () => {
   useEffect(() => {
     const topic = TopicHelper.userOrders();
     const callback = (msg: WebSocketMessage) => {
-      if (msg.data) {
-        // updateOpenOrders(msg);
-        // updateOrderHistory(msg);
+      if (msg.data && msg.data.e === "orderUpdate") {
+        updateOpenOrders(msg.data);
+        updateOrderHistory(msg);
       }
     };
 

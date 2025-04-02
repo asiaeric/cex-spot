@@ -144,22 +144,6 @@ export function parseCandlestick(candlestick: any) {
   };
 }
 
-// export function parseWSOrder(wsOrder: WSOrderData): Order | null {
-//   return {
-//     action: wsOrder.action,
-//     priceFromUser: wsOrder.amount,
-//     type: wsOrder.type,
-//     quantity: wsOrder.size,
-//     symbolName: wsOrder.symbolName,
-//     symbolCode: wsOrder.symbol,
-//     id: wsOrder.id,
-//     filled: wsOrder.filled,
-//     baseCurrency: wsOrder.baseCurrency,
-//     quoteCurrency: wsOrder.quoteCurrency,
-//     externalId: wsOrder.E,
-//   } as Order;
-// }
-
 export function displayDate(dateString: string) {
   if (!dateString) return "";
 

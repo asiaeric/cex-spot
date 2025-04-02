@@ -12,7 +12,7 @@ type Props = {
 
 function SuccessPopup({ title, onPress }: Props) {
   const { components, fonts, layout, gutters, backgrounds } = useTheme();
-  const { t } = useTranslation(["common"]);
+  const { t } = useTranslation(["cex-spot/common"]);
 
   return (
     <View style={[layout.itemsCenter, gutters.marginHorizontal_24]}>

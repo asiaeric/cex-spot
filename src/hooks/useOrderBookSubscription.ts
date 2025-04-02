@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 
 import { wsClient } from "@/CexSpotView";
 import { useStoreActions } from "@/stores/hooks";
@@ -6,24 +6,33 @@ import { OrderBookData } from "@/types";
 import { WebSocketMessage } from "@/types/socket";
 import TopicHelper from "@/ws/topic";
 
-export const useOrderBookSubscription = ({
-  symbol,
-  depth,
-}: {
-  symbol: string | undefined;
-  depth: number;
-}) => {
+export const useOrderBookSubscription = ({ code }: { code: string }) => {
   const { updateOrderBooks } = useStoreActions((store) => store.orderBookModel);
 
+  const transformDepthUpdate = useCallback((data: any): OrderBookData => {
+    return {
+      asks: data.a.map(([price, amount]: [string, string]) => [
+        parseFloat(price),
+        parseFloat(amount),
+      ]),
+      bids: data.b.map(([price, amount]: [string, string]) => [
+        parseFloat(price),
+        parseFloat(amount),
+      ]),
+      e: data.E,
+    };
+  }, []);
+
   useEffect(() => {
-    if (!symbol) {
+    if (!code) {
       return undefined;
     }
 
-    const topic = TopicHelper.orderBookTopic(symbol, depth || 100);
+    const topic = TopicHelper.orderBookTopic(code);
     const callback = (msg: WebSocketMessage) => {
       if (msg.data) {
-        updateOrderBooks(msg.data as OrderBookData);
+        const transformedData = transformDepthUpdate(msg.data);
+        updateOrderBooks(transformedData as OrderBookData);
       }
     };
 
@@ -32,5 +41,5 @@ export const useOrderBookSubscription = ({
     return () => {
       wsClient.unsubscribe(topic);
     };
-  }, [symbol]);
+  }, [code]);
 };

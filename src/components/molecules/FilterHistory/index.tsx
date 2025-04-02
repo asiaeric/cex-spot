@@ -1,5 +1,5 @@
 import DateTimePicker from "@react-native-community/datetimepicker";
-import dayjs from "dayjs";
+import { format } from "date-fns";
 import { t } from "i18next";
 import { useRef, useState } from "react";
 import {
@@ -18,7 +18,6 @@ import { CustomButton } from "@/components/atoms";
 import FilterSvg from "@/components/svg/FilterSvg";
 import { initialFilter } from "@/constants";
 import { useTheme } from "@/theme";
-import i18n from "@/translations";
 import { FilterDate } from "@/types";
 
 interface AggregationSelectionType {
@@ -154,7 +153,9 @@ function FilterHistory({
                 layout.itemsCenter,
               ]}>
               <Text style={[fonts.size_14, fonts.gray200, fonts.bold]}>
-                {dayjs(filters?.startDate).format(DATE_FORMAT)}
+                {filters?.startDate
+                  ? format(new Date(filters.startDate), DATE_FORMAT)
+                  : ""}
               </Text>
             </TouchableOpacity>
           )}
@@ -184,7 +185,9 @@ function FilterHistory({
                   backgrounds.purple100,
                 ]}>
                 <Text style={[fonts.size_14, fonts.gray200, fonts.bold]}>
-                  {dayjs(filters?.endDate).format(DATE_FORMAT)}
+                  {filters?.startDate
+                    ? format(new Date(filters.startDate), DATE_FORMAT)
+                    : ""}
                 </Text>
               </TouchableOpacity>
             </>
@@ -244,7 +247,9 @@ function FilterHistory({
                   dateToUpdate === DateType.START && backgrounds.purple100,
                 ]}>
                 <Text style={[fonts.size_14, fonts.gray200, fonts.bold]}>
-                  {dayjs(startDate).format(DATE_FORMAT)}
+                  {filters?.startDate
+                    ? format(new Date(filters.startDate), DATE_FORMAT)
+                    : ""}
                 </Text>
               </TouchableOpacity>
               <Text
@@ -267,7 +272,9 @@ function FilterHistory({
                   dateToUpdate === DateType.END && backgrounds.purple100,
                 ]}>
                 <Text style={[fonts.size_14, fonts.gray200, fonts.bold]}>
-                  {dayjs(endDate).format(DATE_FORMAT)}
+                  {filters?.endDate
+                    ? format(new Date(filters.endDate), DATE_FORMAT)
+                    : ""}
                 </Text>
               </TouchableOpacity>
             </View>
@@ -283,7 +290,7 @@ function FilterHistory({
                   ? startDate
                   : new Date(new Date().setDate(new Date().getDate() - 179))
               }
-              locale={i18n.language === "vn" ? "vi-VN" : undefined}
+              // locale={i18n.language === "vn" ? "vi-VN" : undefined}
               onChange={handleDateChange}
             />
           </View>

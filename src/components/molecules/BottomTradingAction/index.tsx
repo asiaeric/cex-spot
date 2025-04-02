@@ -9,7 +9,7 @@ import { OrderAction } from "@/types";
 import { RouteName } from "@/types/navigation";
 
 function BottomTradingAction() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation(["cex-spot/common"]);
   const { layout, backgrounds, gutters } = useTheme();
   const navigation = useAppNavigation();
 

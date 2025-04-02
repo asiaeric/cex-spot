@@ -39,7 +39,7 @@ interface RBids {
 
 function SideOrderBook({ customStyle, onPressItems }: IOrderBook) {
   const { fonts, gutters, layout } = useTheme();
-  const { t } = useTranslation(["order"]);
+  const { t } = useTranslation(["cex-spot/order"]);
 
   const [listHeight, setListHeight] = useState(0);
   const [filter, setFilter] = useState<OrderBookFilterType>(

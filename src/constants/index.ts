@@ -1,5 +1,4 @@
-import dayjs from "dayjs";
-
+import { format } from "date-fns";
 import {
   ChartLabelTimeline,
   IChartIndicator,
@@ -82,10 +81,9 @@ export const CHART_INDICATORS: IChartIndicator[] = [
 export const NUMBER_BARS_QUERY = 500;
 
 export const initialFilter = {
-  startDate: dayjs().format(DATE_FORMATS.DATE_TIME),
-  endDate: dayjs().format(DATE_FORMATS.DATE_TIME),
+  startDate: format(new Date(), DATE_FORMATS.DATE_TIME),
+  endDate: format(new Date(), DATE_FORMATS.DATE_TIME),
 };
-
 export const EN_LANG = "en-US";
 export const VI_LANG = "vi-VN";
 

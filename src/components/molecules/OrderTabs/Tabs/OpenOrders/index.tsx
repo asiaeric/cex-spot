@@ -51,14 +51,7 @@ const OpenOrders = () => {
   };
 
   const renderCell = useCallback(
-    (props: any) => (
-      <Animated.View
-        {...props}
-        layout={LinearTransition.springify()}
-        entering={FadeIn}
-        exiting={ZoomOut}
-      />
-    ),
+    (props: any) => <Animated.View {...props} />,
     [],
   );
 

@@ -7,7 +7,7 @@ import { generateNameStatus } from "@/utils/OrderHelpers";
 import { displayDate, formatCurrency } from "@/utils/StringHelper";
 
 function HistoryItem({ item }: { item: Order }) {
-  const { t } = useTranslation(["order", "common"]);
+  const { t } = useTranslation(["cex-spot/order", "cex-spot/common"]);
   const { layout, fonts, components, gutters, backgrounds } = useTheme();
 
   const type =

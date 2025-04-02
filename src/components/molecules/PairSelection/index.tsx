@@ -17,6 +17,7 @@ import CustomBottomSheet, {
 import { useStoreActions, useStoreState } from "@/stores/hooks";
 import { useTheme } from "@/theme";
 import { TradingPair } from "@/types";
+import { AppIcon } from "@/components/atoms";
 
 interface ItemProps {
   // eslint-disable-next-line react/no-unused-prop-types
@@ -30,7 +31,7 @@ interface Props {
 function PairSelection({ style }: Props) {
   const { layout, gutters, fonts, components, colors } = useTheme();
   const bsRef = useRef<BottomSheetRefProps>(null);
-  const { t } = useTranslation(["common"]);
+  const { t } = useTranslation(["cex-spot/common"]);
   const { tradingPairs, currentPair } = useStoreState(
     (store) => store.tradingPairModel,
   );
@@ -67,14 +68,7 @@ function PairSelection({ style }: Props) {
         <Text style={[fonts.size_20, fonts.gray800, fonts.bold]}>
           {currentPair?.name || ""}
         </Text>
-        {/* <Image
-          source={DownImage}
-          style={[
-            components.image12,
-            gutters.marginLeft_8,
-            { tintColor: colors.gray200 },
-          ]}
-        /> */}
+        <AppIcon name="ChevronDown" size={20} color={colors.gray200} />
       </TouchableOpacity>
       <CustomBottomSheet ref={bsRef}>
         <View style={[layout.itemsCenter]}>

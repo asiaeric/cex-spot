@@ -35,7 +35,7 @@ interface ToastProps {
 }
 
 function ToastDisplay(props: ToastProps) {
-  const { t } = useTranslation(["order", "common"]);
+  const { t } = useTranslation(["cex-spot/order", "cex-spot/common"]);
   const { gutters, layout, borders, fonts } = useTheme();
   const { message: order, type } = props;
 

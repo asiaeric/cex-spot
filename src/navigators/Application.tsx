@@ -5,9 +5,9 @@ import {
   useRoute,
 } from "@react-navigation/native";
 import {
-  createStackNavigator,
-  StackNavigationProp,
-} from "@react-navigation/stack";
+  createNativeStackNavigator,
+  NativeStackNavigationProp,
+} from "@react-navigation/native-stack";
 
 import { navigationRef } from "./NavigationUtils";
 
@@ -23,10 +23,10 @@ import {
 import { useTheme } from "@/theme";
 import { ApplicationStackParamList, RouteName } from "@/types/navigation";
 
-const Stack = createStackNavigator<ApplicationStackParamList>();
+const Stack = createNativeStackNavigator<ApplicationStackParamList>();
 
 export const useAppNavigation = () => {
-  return useNavigation<StackNavigationProp<ApplicationStackParamList>>();
+  return useNavigation<NativeStackNavigationProp<ApplicationStackParamList>>();
 };
 
 export function useAppRouteParam<T extends keyof ApplicationStackParamList>() {
@@ -39,17 +39,17 @@ function ApplicationNavigator() {
 
   return (
     // <NavigationContainer theme={navigationTheme} ref={navigationRef}>
-      <Stack.Navigator
-        key={variant}
-        screenOptions={{ headerShown: false, gestureEnabled: false }}>
-        <Stack.Screen name={RouteName.SignIn} component={SignIn} />
-        <Stack.Screen name={RouteName.Market} component={Market} />
-        <Stack.Screen name={RouteName.SignUp} component={SignUp} />
-        <Stack.Screen name={RouteName.Trading} component={Trading} />
-        <Stack.Screen name={RouteName.Spot} component={Spot} />
-        <Stack.Screen name={RouteName.Setting} component={Setting} />
-        <Stack.Screen name={RouteName.Transaction} component={Transaction} />
-      </Stack.Navigator>
+    <Stack.Navigator
+      id={undefined}
+      key={variant}
+      screenOptions={{ headerShown: false, gestureEnabled: false }}>
+      <Stack.Screen name={RouteName.Market} component={Market} />
+      <Stack.Screen name={RouteName.SignUp} component={SignUp} />
+      <Stack.Screen name={RouteName.Trading} component={Trading} />
+      <Stack.Screen name={RouteName.Spot} component={Spot} />
+      <Stack.Screen name={RouteName.Setting} component={Setting} />
+      <Stack.Screen name={RouteName.Transaction} component={Transaction} />
+    </Stack.Navigator>
     // </NavigationContainer>
   );
 }

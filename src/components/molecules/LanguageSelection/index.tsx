@@ -16,7 +16,7 @@ import CustomBottomSheet, {
 } from "@/components/atoms/CustomBottomSheet";
 import { storage } from "@/stores";
 import { useTheme } from "@/theme";
-import i18next, { languageNames, languageResources } from "@/translations";
+import { languageNames, languageResources } from "@/translations";
 import { wait } from "@/utils/StringHelper";
 
 interface ItemProps {
@@ -30,12 +30,12 @@ interface AggregationSelectionType {
 function LanguageSelection({ customStyle }: AggregationSelectionType) {
   const { layout, gutters, fonts, components, colors } = useTheme();
   const bsRef = useRef<BottomSheetRefProps>(null);
-  const { t } = useTranslation(["common"]);
+  const { t } = useTranslation(["cex-spot/common"]);
 
   const languages = Object.keys(languageResources);
 
   const onChangeLanguage = useCallback((lang: "vn" | "en") => {
-    void i18next.changeLanguage(lang);
+    // void i18next.changeLanguage(lang);
   }, []);
 
   const onChangeLanguagePress = useCallback((language: "en" | "vn") => {
@@ -45,17 +45,18 @@ function LanguageSelection({ customStyle }: AggregationSelectionType) {
 
   const renderItem = useCallback((data: ItemProps) => {
     const { item } = data;
-    return (
-      <Row
-        isSelected={item === i18next.language}
-        item={item}
-        onPress={async () => {
-          bsRef.current?.close();
-          await wait(1);
-          onChangeLanguagePress(item as "en" | "vn");
-        }}
-      />
-    );
+    return null;
+    // return (
+    //   <Row
+    //     isSelected={item === i18next.language}
+    //     item={item}
+    //     onPress={async () => {
+    //       bsRef.current?.close();
+    //       await wait(1);
+    //       onChangeLanguagePress(item as "en" | "vn");
+    //     }}
+    //   />
+    // );
   }, []);
 
   return (
@@ -65,7 +66,7 @@ function LanguageSelection({ customStyle }: AggregationSelectionType) {
         onPress={() => {
           bsRef.current?.open();
         }}>
-        <Text style={[fonts.gray200]}>{languageNames[i18next.language]}</Text>
+        {/* <Text style={[fonts.gray200]}>{languageNames[i18next.language]}</Text> */}
         {/* <Image
           source={DownImage}
           style={[

@@ -21,7 +21,7 @@ const SpotScene = () => {
   );
   const { getStatistics } = useStoreActions((store) => store.statisticModel);
   const { tradingPairs } = useStoreState((store) => store.tradingPairModel);
-  const { t } = useTranslation(["common"]);
+  const { t } = useTranslation(["cex-spot/common"]);
 
   const tradingPairsArr = useMemo(
     () => [...tradingPairs.values()],

@@ -75,8 +75,7 @@ const TransactionScreen = () => {
   }, [currentPair, updateAssetsWithProfile]);
 
   useOrderBookSubscription({
-    symbol: currentPair?.code,
-    depth: 100,
+    code: currentPair!.code,
   });
 
   useOrderSubscription();

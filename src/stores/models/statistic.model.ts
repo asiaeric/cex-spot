@@ -1,11 +1,11 @@
 /* eslint-disable no-nested-ternary */
-import dayjs from "dayjs";
 import { Action, Thunk, action, thunk } from "easy-peasy";
 import { enableMapSet } from "immer";
 
 import { DATE_FORMATS } from "@/constants/dateFormats";
 import { fetchStatistic } from "@/services/statistic";
 import { Statistic } from "@/types";
+import { format } from "date-fns";
 
 enableMapSet();
 export interface StatisticState {
@@ -69,8 +69,8 @@ export const statisticModel: StatisticModel = {
       const defaultParams = {
         size: 100,
         page: 1,
-        fromDate: dayjs().format(DATE_FORMATS.TIME_START),
-        toDate: dayjs().format(DATE_FORMATS.TIME_END),
+        fromDate: format(new Date(), DATE_FORMATS.TIME_START),
+        toDate: format(new Date(), DATE_FORMATS.TIME_END),
       };
       const response = await fetchStatistic(defaultParams);
       actions.setStatistics(response);

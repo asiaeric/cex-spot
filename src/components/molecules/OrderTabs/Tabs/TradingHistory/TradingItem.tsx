@@ -42,7 +42,7 @@ const TradingRow = ({ title, value, enableCopy }: TradingRowProps) => {
 };
 
 function TradingItem({ item }: { item: Trading }) {
-  const { t } = useTranslation(["order", "common"]);
+  const { t } = useTranslation(["cex-spot/order", "cex-spot/common"]);
   const { layout, fonts, components, gutters } = useTheme();
 
   const fontActions =

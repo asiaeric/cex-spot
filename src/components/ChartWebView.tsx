@@ -1,5 +1,5 @@
-import dayjs from "dayjs";
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import { format } from "date-fns";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { View } from "react-native";
 import { WebView } from "react-native-webview";
@@ -12,7 +12,7 @@ import { useStoreActions, useStoreState } from "@/stores/hooks";
 import { CandlestickData, ChartLabelTimeline } from "@/types";
 
 const WebViewChart = () => {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation(["cex-spot/common"]);
   const webViewRef = useRef<WebView>(null);
   const [chartReady, setChartReady] = useState(false);
   const { currentPair } = useStoreState((state) => state.tradingPairModel);
@@ -66,7 +66,7 @@ const WebViewChart = () => {
         symbol: currentPair.code,
         limit: 100,
         interval: time.id,
-        toDate: dayjs(chartData[0]?.time).format(DATE_FORMATS.DATE_TIME),
+        toDate: format(new Date(chartData[0].time), DATE_FORMATS.DATE_TIME),
       });
 
       if (moreData.length > 0) {

@@ -11,6 +11,7 @@ import { useStoreState } from "@/stores/hooks";
 import { useTheme } from "@/theme";
 import { OrderAction, OrderBookPair, OrderSide } from "@/types";
 import { checkInOpenOrders, fillOrderBooks } from "@/utils/OrderBookHelpers";
+import { useOrderBookSubscription } from "@/hooks/useOrderBookSubscription";
 
 interface IOrderBook {
   customStyle?: ViewStyle | ViewStyle[];
@@ -28,7 +29,7 @@ interface RBids {
 const DEFAULT_DISPLAY = 40;
 
 const OrderBook = ({ customStyle }: IOrderBook) => {
-  const { t } = useTranslation("order");
+  const { t } = useTranslation(["cex-spot/order"]);
   const { fonts, gutters, layout } = useTheme();
 
   const { orderBookLoading, asks, bids, maxAsk, maxBid } = useStoreState(
@@ -40,6 +41,8 @@ const OrderBook = ({ customStyle }: IOrderBook) => {
   );
 
   const { openOrders } = useStoreState((store) => store.openOrdersModel);
+
+  useOrderBookSubscription({ code: currentPair!.code });
 
   const renderAsks = useCallback(
     ({ item }: RAsks) => {

@@ -4,14 +4,21 @@ import ky from "ky";
 import { VI_LANG } from "@/constants";
 import store from "@/stores";
 
-const API_URL = "https://qc.chapi.vcex.network/api/v1/";
+const API_URL = "https://rc-c12-chapi.vcex.network/api/v1/";
+
+let dynamicAccessToken: string | undefined;
 
 const getHeaderConfig = () => {
   const { userModel, tradingPairModel } = store.getState();
   return {
-    accessToken: userModel.user?.partnerToken?.accessToken,
+    accessToken:
+      dynamicAccessToken || userModel.user?.partnerToken?.accessToken,
     symbol: tradingPairModel.currentPair?.code,
   };
+};
+
+export const setAccessToken = (token?: string) => {
+  dynamicAccessToken = token;
 };
 
 const apiClient = ky.extend({

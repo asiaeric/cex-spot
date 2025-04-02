@@ -23,7 +23,7 @@ const ConfirmPopup = forwardRef<ConfirmPopupRefProps, Props>(
   ({ title }, ref) => {
     const { components, fonts, layout, gutters, backgrounds, borders } =
       useTheme();
-    const { t } = useTranslation(["common"]);
+    const { t } = useTranslation(["cex-spot/common"]);
     const [modalVisible, setModalVisible] = useState(false);
 
     const triggerConfirm = useRef<() => void>();

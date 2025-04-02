@@ -20,7 +20,7 @@ export type ModifyPopUpRefProps = {
 
 const ModifyPopUp = forwardRef<ModifyPopUpRefProps>((props, ref) => {
   const { layout, gutters, fonts, components } = useTheme();
-  const { t } = useTranslation(["common"]);
+  const { t } = useTranslation(["cex-spot/common"]);
   const [order, setOrder] = useState<Order | null>(null);
   const [currentPrice, setCurrentPrice] = useState<number>(0);
   const [quantity, setQuantity] = useState<number>(0);

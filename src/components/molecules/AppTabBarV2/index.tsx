@@ -15,7 +15,7 @@ const AppTabBarV2: React.FC<AppTabBarV2Props> = ({
   onTabPress,
 }) => {
   const { layout, fonts, gutters } = useTheme();
-  const { t } = useTranslation(["common"]);
+  const { t } = useTranslation(["cex-spot/common"]);
   return (
     <View
       style={[layout.row, gutters.marginTop_12, gutters.paddingHorizontal_14]}>

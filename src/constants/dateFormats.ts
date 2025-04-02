@@ -3,5 +3,5 @@ export const DATE_FORMATS = {
   INPUT: "YYYY-MM-DD",
   TIME_START: "YYYY-MM-DDT00:00:00.000Z",
   TIME_END: "YYYY-MM-DDT23:59:59.999Z",
-  DATE_TIME: "YYYY-MM-DDTHH:mm:ssZ",
+  DATE_TIME: "yyyy-MM-dd'T'HH:mm:ss'Z'",
 } as const;

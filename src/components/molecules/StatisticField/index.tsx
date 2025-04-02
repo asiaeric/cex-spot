@@ -7,7 +7,7 @@ import { getDecimalPlaces } from "@/utils/OrderHelpers";
 import { formatNumberDisplay } from "@/utils/StringHelper";
 
 function StatisticField() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation(["cex-spot/common"]);
   const { layout, fonts, gutters } = useTheme();
 
   const { currentPair } = useStoreState((store) => store.tradingPairModel);

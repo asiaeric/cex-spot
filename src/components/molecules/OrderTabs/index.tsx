@@ -54,7 +54,7 @@ function OrderTabs({
   displaySpotAction = false,
 }: OrderTabsProps) {
   const { backgrounds, layout, gutters } = useTheme();
-  const { t } = useTranslation(["common"]);
+  const { t } = useTranslation(["cex-spot/common"]);
 
   const { openOrderCount } = useStoreState((store) => store.openOrdersModel);
 
@@ -77,16 +77,13 @@ function OrderTabs({
             {props.tabNames.map((name, index) => {
               const tabProps = props.tabProps.get(name);
               const label = tabProps?.label;
-              // const renderLabel =
-              //   typeof label === "function" ? (
-              //     label({ name, index, indexDecimal: props.indexDecimal })
-              //   ) : (
-              //     <TabItem
-              //       index={index}
-              //       indexDecimal={props.indexDecimal}
-              //       label={name}
-              //     />
-              //   );
+              const renderLabel = (
+                <TabItem
+                  index={index}
+                  indexDecimal={props.indexDecimal}
+                  label={name}
+                />
+              );
 
               return (
                 <TouchableOpacity
@@ -96,12 +93,8 @@ function OrderTabs({
                     layout.flex_1,
                     layout.justifyCenter,
                     layout.itemsCenter,
-                    props.index.value === index && {
-                      borderBottomWidth: 2,
-                      borderBottomColor: "#00d69e",
-                    },
                   ]}>
-                  {/* {renderLabel} */}
+                  {renderLabel}
                 </TouchableOpacity>
               );
             })}
@@ -121,15 +114,11 @@ function OrderTabs({
 
   return (
     <Tabs.Container
-      lazy
-      containerStyle={(layout.flex_1, layout.zm1, layout.overflowHidden)}
+      containerStyle={[layout.zm1, layout.overflowHidden]}
       headerContainerStyle={backgrounds.neutral600}
-      snapThreshold={0.5}
       renderTabBar={renderTabBar}
-      headerHeight={moderateScale(470)}
-      tabBarHeight={moderateScale(TAB_BAR_HEIGHT)}
-      minHeaderHeight={MIN_HEADER_HEIGHT}
-      renderHeader={renderHeader}>
+      renderHeader={renderHeader}
+      allowHeaderOverscroll={true}>
       {displayOpenOrder ? (
         <Tabs.Tab
           name={OrderTabsName.OpenOrders}

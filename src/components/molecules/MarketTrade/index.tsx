@@ -17,7 +17,7 @@ export const TRADING_MARKET_ITEMS = 40;
 
 function MarketTrade({ customStyle }: Props) {
   const { fonts, gutters, layout } = useTheme();
-  const { t } = useTranslation("order");
+  const { t } = useTranslation(["cex-spot/order"]);
 
   const { marketTrades } = useStoreState((store) => store.marketTradeModel);
   const { currentPair } = useStoreState((store) => store.tradingPairModel);

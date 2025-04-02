@@ -34,7 +34,7 @@ interface ITransactionForm {
 }
 
 function TransactionForm({ customStyle }: ITransactionForm) {
-  const { t } = useTranslation(["common", "order"]);
+  const { t } = useTranslation(["cex-spot/common", "cex-spot/order"]);
   const { setOrderActionError } = useStoreActions(
     (store) => store.openOrdersModel,
   );

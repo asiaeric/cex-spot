@@ -11,7 +11,7 @@ import Animated, {
 import { useTheme } from "@/theme";
 
 function ListEmptyComponent() {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation(["cex-spot/common"]);
   const { layout, fonts, components } = useTheme();
 
   const { top, height } = useHeaderMeasurements();

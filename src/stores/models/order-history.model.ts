@@ -4,14 +4,7 @@ import { Model } from ".";
 
 import { DEFAULT_SIZE_REQUEST, initialFilter } from "@/constants";
 import { fetchOrderHistory } from "@/services/order";
-import {
-  ApiResponse,
-  FetchOrderStatus,
-  FilterDate,
-  Order,
-  OrderStatus,
-  WSOrderData,
-} from "@/types";
+import { ApiResponse, FetchOrderStatus, FilterDate, Order } from "@/types";
 import { WebSocketMessage } from "@/types/socket";
 // import { parseWSOrder } from "@/utils/StringHelper";
 
