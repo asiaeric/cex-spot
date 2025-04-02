@@ -1,6 +1,5 @@
 import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
 import { StoreProvider } from "easy-peasy";
-import * as React from "react";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { KeyboardProvider } from "react-native-keyboard-controller";
 import { SafeAreaProvider } from "react-native-safe-area-context";
@@ -14,26 +13,23 @@ import CEXWebSocket from "./ws/Websocket";
 import "react-native-reanimated";
 import { setAccessToken } from "./services/instance";
 import { useLoginSubscription } from "./hooks/useLoginSubscription";
-import { initCexSpotI18n } from "./translations";
+import { useEffect } from "react";
 // const NativeView: React.ComponentType<CexSpotViewProps> = requireNativeView("CexSpot");
 
+export * from "./translations"; // Export all functions from the translations module
 export const wsClient = CEXWebSocket.getInstance();
 
-// This is to ensure all needed functions is initialized when the module is loaded
-export const initialCexSpot = async () => {
-  initCexSpotI18n(); // Ensure i18n is initialized
-  ignoreErrorVirtualList();
-}
+ignoreErrorVirtualList();
 
 interface CexSpotViewProps {
   accessToken?: string;
 }
 
 export const CexSpotView = ({ accessToken }: CexSpotViewProps) => {
-  React.useEffect(() => {
+  useEffect(() => {
     setAccessToken(
       accessToken ||
-        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwYXJ0bmVySWQiOiIxIiwicGFydG5lclByb2ZpbGVJZCI6ImEwZDVmMjViLWQwMmQtNDkzYS1iNGM5LTU4NDEzMTcxYjI0ZiIsImlhdCI6MTc0MzU4MDMwNSwiZXhwIjoxNzQzNTgxMzkwLCJhdWQiOiJjZXgtaW50ZXJuYWwtc2VydmljZSIsImlzcyI6ImNleC1hdXRoLXNlcnZpY2UiLCJzdWIiOiIyOTc0Njc1OTM1Nzk1NjE5ODQifQ.T3HLlBOJmqPdcgfqPbFQq0qJvaWZgt2L5TRixA21NjU",
+        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwYXJ0bmVySWQiOiIxIiwicGFydG5lclByb2ZpbGVJZCI6ImEwZDVmMjViLWQwMmQtNDkzYS1iNGM5LTU4NDEzMTcxYjI0ZiIsImlhdCI6MTc0MzU4MDMwNSwiZXhwIjoxNzQzNTgxMzkwLCJhdWQiOiJjZXgtaW50ZXJuYWwtc2VydmljZSIsImlzcyI6ImNleC1hdXRoLXNlcnZpY2UiLCJzdWIiOiIyOTc0Njc1OTM1Nzk1NjE5ODQifQ.T3HLlBOJmqPdcgfqPbFQq0qJvaWZgt2L5TRixA21NjU"
     );
   }, [accessToken]);
 
@@ -55,4 +51,4 @@ export const CexSpotView = ({ accessToken }: CexSpotViewProps) => {
     //   </GestureHandlerRootView>
     // </SafeAreaProvider>
   );
-}
+};

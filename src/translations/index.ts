@@ -25,7 +25,7 @@ export const languageNames: Record<string, string> = {
   vn: "Tiếng Việt",
 };
 
-const initCexSpotI18n = (hostI18n = i18n) => {
+export const initCexSpotI18n = (hostI18n = i18n) => {
   // Add your resources to the host i18next instance
   Object.entries(languageResources).forEach(([lang, namespaces]) => {
     Object.entries(namespaces).forEach(([ns, resources]) => {
@@ -33,5 +33,3 @@ const initCexSpotI18n = (hostI18n = i18n) => {
     });
   });
 };
-
-export { initCexSpotI18n };
