@@ -183,10 +183,6 @@ export function ignoreErrorVirtualList() {
     console.error = (...arg) => {
       // eslint-disable-next-line no-restricted-syntax
       for (const error of ignoreWarns) {
-        if (arg[0]?.startsWith(error)) {
-          // 	return
-          // }
-        }
         errorWarn(...arg);
       }
     };

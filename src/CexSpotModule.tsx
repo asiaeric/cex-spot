@@ -14,17 +14,24 @@ import CEXWebSocket from "./ws/Websocket";
 import "react-native-reanimated";
 import { setAccessToken } from "./services/instance";
 import { useLoginSubscription } from "./hooks/useLoginSubscription";
+import { enableMapSet } from "immer";
+import { initCexSpotI18n } from "./translations";
 // const NativeView: React.ComponentType<CexSpotViewProps> = requireNativeView("CexSpot");
 
 export const wsClient = CEXWebSocket.getInstance();
 
-ignoreErrorVirtualList();
+// This is to ensure all needed functions is initialized when the module is loaded
+export const initialCexSpot = async () => {
+  await initCexSpotI18n(); // Ensure i18n is initialized
+  ignoreErrorVirtualList();
+  enableMapSet();
+}
 
 interface CexSpotViewProps {
   accessToken?: string;
 }
 
-export default function CexSpotView({ accessToken }: CexSpotViewProps) {
+export const CexSpotView = ({ accessToken }: CexSpotViewProps) => {
   React.useEffect(() => {
     setAccessToken(
       accessToken ||

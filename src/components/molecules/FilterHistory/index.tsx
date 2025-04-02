@@ -38,7 +38,7 @@ enum DateRange {
   ThreeMonths = "3 Months",
 }
 
-const DATE_FORMAT = "DD/MM/YYYY";
+const DATE_FORMAT = "DD/MM/yyyy";
 
 function FilterHistory({
   filters,

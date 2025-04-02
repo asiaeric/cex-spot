@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import { wsClient } from "@/CexSpotView";
+import { wsClient } from "@/CexSpotModule";
 import { WebSocketMessage } from "@/types/socket";
 import TopicHelper from "@/ws/topic";
 

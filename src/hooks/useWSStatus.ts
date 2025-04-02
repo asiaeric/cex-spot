@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { wsClient } from "@/CexSpotView";
+import { wsClient } from "@/CexSpotModule";
 
 export const useWSStatus = () => {
   const [isConnected, setIsConnected] = useState(wsClient.isConnected);

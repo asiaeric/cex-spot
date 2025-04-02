@@ -1,6 +1,6 @@
 import { useCallback, useEffect } from "react";
 
-import { wsClient } from "@/CexSpotView";
+import { wsClient } from "@/CexSpotModule";
 import { useStoreActions } from "@/stores/hooks";
 import { OrderBookData } from "@/types";
 import { WebSocketMessage } from "@/types/socket";

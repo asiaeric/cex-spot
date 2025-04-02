@@ -1,13 +1,11 @@
 /* eslint-disable no-nested-ternary */
 import { Action, Thunk, action, thunk } from "easy-peasy";
-import { enableMapSet } from "immer";
 
 import { DATE_FORMATS } from "@/constants/dateFormats";
 import { fetchStatistic } from "@/services/statistic";
 import { Statistic } from "@/types";
 import { format } from "date-fns";
 
-enableMapSet();
 export interface StatisticState {
   statistics: Map<string, Statistic>;
   error: string;
